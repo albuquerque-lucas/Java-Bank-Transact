@@ -4,12 +4,20 @@ import java.sql.SQLOutput;
 
 public class Account {
 
-    private int accountNumber;
+    private final int accountNumber;
     private double balance;
 
     public Account(int accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
+    }
+
+    public int getAccountNumber(){
+        return accountNumber;
+    }
+
+    public double getBalance(){
+        return balance;
     }
 
     public void deposit(double amount) {

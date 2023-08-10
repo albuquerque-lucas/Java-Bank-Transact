@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74ec6639-86e2-4a69-831b-5e896a2b79eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-world-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/MockData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/initializer/UserInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/account/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/account/CheckingAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/account/SavingsAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/user/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/user/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/initializer/Initializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/initializer/OperationInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initializer/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/initializer/UserInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/account/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

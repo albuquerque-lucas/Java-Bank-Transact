@@ -20,6 +20,10 @@ public class User {
         System.out.println("Name: " + name);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void displayAge() {
         System.out.println("Age: " + age);
     }
@@ -52,5 +56,25 @@ public class User {
 
     public void setSavingsAccount(SavingsAccount savingsAccount) {
         this.savingsAccount = savingsAccount;
+    }
+
+    public CheckingAccount getCheckingAccount() {
+        return checkingAccount;
+    }
+
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public Account getAccount() {
+        Account account;
+        if (getCheckingAccount() != null) {
+            account = getCheckingAccount();
+        } else if (getSavingsAccount() != null) {
+            account = getSavingsAccount();
+        } else {
+            account = null;
+        }
+        return account;
     }
 }

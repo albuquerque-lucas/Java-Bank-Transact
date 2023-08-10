@@ -10,31 +10,19 @@ import model.user.User;
 import java.util.Random;
 import java.util.Scanner;
 
-public class UserInitializer {
-
-    public static final String AFFIRMATIVE_OPTION = "y";
-    public static final String NEGATIVE_OPTION = "n";
-    public static final String EMPLOYEE_OPTION = "e";
-    public static final String CUSTOMER_OPTION = "c";
-    public static final String CHECKING_ACCOUNT = "cc";
-    public static final String SAVINGS_ACCOUNT = "cp";
-    public static final String INITIAL_EMPLOYEE_POSITION = "Novato";
-    private static final int MIN_CUSTOMER_ID = 1001;
-    private static final int MAX_CUSTOMER_ID = 9999;
-    private static final int INITIAL_BALANCE = 0;
-    private static final int OVERDRAFT_LIMIT = 100;
-    private static final double INTEREST_RATE = 0.14;
+public class UserInitializer extends Initializer{
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void initialize() {
+    public static User initialize() {
         User createdUser = initializeUser();
         if (createdUser == null) {
             System.out.println("Nao foi possivel criar o usuario.");
         } else {
             associateAccount(createdUser);
+            createdUser.displayAccount();
         }
-
+        return createdUser;
     }
     public static User initializeUser() {
         //Pergunta para iniciar a criacao de usuario
@@ -49,7 +37,7 @@ public class UserInitializer {
             System.out.print("Qual a sua idade?");
             int age = scanner.nextInt();
             scanner.nextLine();
-            System.out.print("Voce e cliente ou funcionario? [c/e]");
+            System.out.print("Voce e cliente ou funcionario? [" + CUSTOMER_OPTION + " / " + EMPLOYEE_OPTION + "]");
             String userType = scanner.nextLine().toLowerCase();
 
             if (userType.equals(EMPLOYEE_OPTION)) {
@@ -75,12 +63,11 @@ public class UserInitializer {
         } else {
             System.out.println("Resposta invalida. Encerrando operacao.");
         }
-
         return user;
     }
 
     public static void associateAccount(User user) {
-        System.out.println("Pretende criar conta corrente ou conta poupanca? [cc / cp]");
+        System.out.println("Pretende criar conta corrente ou conta poupanca? [ " + CHECKING_ACCOUNT + " / " + SAVINGS_ACCOUNT + " ]");
         String accountType = scanner.nextLine().toLowerCase();
 
         if (accountType.equals(CHECKING_ACCOUNT)) {
