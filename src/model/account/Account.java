@@ -33,6 +33,15 @@ public class Account {
             System.out.println("Saldo insuficiente para esta operacao.");
         }
     }
+    public void transfer(Account destinationAccount, double amount) {
+        if (amount <= balance) {
+            withdraw(amount);
+            destinationAccount.deposit(amount);
+            System.out.println("Transferencia de R$" + amount + " realizada com sucesso.");
+        } else {
+            System.out.println("Saldo insuficiente para esta transferencia.");
+        }
+    }
 
     public void displayAccountNumber() {System.out.println("Numero da conta: " + accountNumber);}
 

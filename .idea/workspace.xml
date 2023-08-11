@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74ec6639-86e2-4a69-831b-5e896a2b79eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/initializer/Initializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/initializer/OperationInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/MessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/initializer/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/initializer/UserInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initializer/Initializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initializer/OperationInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initializer/UserInitializer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/account/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/account/CheckingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/account/CheckingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AccountService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -43,7 +47,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
