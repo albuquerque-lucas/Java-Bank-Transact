@@ -1,5 +1,4 @@
 import controllers.UserController;
-import service.UserService;
 import model.user.User;
 public class Main {
     public static void main(String[] args) {

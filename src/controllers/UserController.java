@@ -5,19 +5,10 @@ import model.account.SavingsAccount;
 import model.user.Customer;
 import model.user.Employee;
 import model.user.User;
-import service.UserService;
 
 import java.util.Scanner;
 
-public class UserController {
-    private static final String AFFIRMATIVE_OPTION = "y";
-    private static final String NEGATIVE_OPTION = "n";
-    private static final String EMPLOYEE_CODE = "f";
-    private static final String CUSTOMER_CODE = "c";
-    private static final String SAVINGS_ACCOUNT_CODE = "cp";
-    private static final String CHECKING_ACCOUNT_CODE = "cc";
-    private final Scanner scanner = new Scanner(System.in);
-    private final UserService userService = new UserService();
+public class UserController extends Controller{
     public void start() {
         clearScreen();
         System.out.println("=======================================");
@@ -29,7 +20,7 @@ public class UserController {
     }
 
     public User initializeUser() {
-        System.out.println("Podemos começar? [" + AFFIRMATIVE_OPTION + " / " + NEGATIVE_OPTION + "]");
+        System.out.println("Podemos começar? " + YES_OR_NO_QUERY);
         String startResponse = scanner.nextLine();
 
         if (startResponse.equals(AFFIRMATIVE_OPTION)) {
@@ -38,7 +29,7 @@ public class UserController {
             System.out.println("Qual a sua idade?");
             String ageResponse = scanner.nextLine();
             int age = Integer.parseInt(ageResponse);
-            System.out.println("Voce e funcionario ou cliente? [" + EMPLOYEE_CODE + " / " + CUSTOMER_CODE + "]");
+            System.out.println("Voce e funcionario ou cliente? " + USER_TYPE_QUERY);
             String typeResponse = scanner.nextLine();
 
             if (typeResponse.equals(EMPLOYEE_CODE)) {
@@ -48,8 +39,15 @@ public class UserController {
             } else {
                 System.out.println("|             Resposta invalida             |");
                 waitForEnter();
-                System.out.println("|           Vamos tentar novamente          |");
-                initializeUser();
+                System.out.println("|           Vamos tentar novamente? " + YES_OR_NO_QUERY + "      |");
+                String tryAgainResponse = scanner.nextLine();
+                if (tryAgainResponse.equals(AFFIRMATIVE_OPTION)) {
+                    initializeUser();
+                } else if (tryAgainResponse.equals(NEGATIVE_OPTION)) {
+                    return null;
+                } else {
+                    invalidAnswer();
+                }
             }
         } else if (startResponse.equals(NEGATIVE_OPTION)) {
             System.out.println("Terminando aplicacao.");
@@ -62,7 +60,7 @@ public class UserController {
     }
 
     public void associateAccount(User user) {
-        System.out.println("Voce quer criar uma conta corrente ou conta poupanca? [" + CHECKING_ACCOUNT_CODE + "  " + SAVINGS_ACCOUNT_CODE + "]");
+        System.out.println("Voce quer criar uma conta corrente ou conta poupanca? " + ACCOUNT_TYPE_QUERY);
         String response = scanner.nextLine();
         if (response.equals(CHECKING_ACCOUNT_CODE)) {
             CheckingAccount checkingAccount = new CheckingAccount(1234, 0.00, 100);
@@ -89,25 +87,9 @@ public class UserController {
         waitForEnter();
         System.out.println("Dados do usuario secundario:");
         customer.displayInfo();
-        System.out.println("Dados da conta do segundo usuario " + customer.getName());
+        System.out.println("Dados da conta do segundo usuario " + customer.getName() + ":");
         customer.getAccount().displayAccountNumber();
         customer.getAccount().displayBalance();
         return customer;
-    }
-
-    public void waitForEnter() {
-        System.out.print("Pressione Enter para continuar...");
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
-    }
-
-    public void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
-    public void invalidAnswer() {
-        System.out.println("|           Resposta invalida          |");
-        System.out.println("|         Encerrando o sistema        |");
     }
 }
