@@ -19,9 +19,8 @@ public class Account {
     public double getBalance(){
         return balance;
     }
-
-    public void deposit(double amount) {
-        balance += amount;
+    public void deposit(double amount, Account targetAccount) {
+        targetAccount.balance += amount;
         System.out.println("Deposito: R$" + amount);
     }
 
@@ -36,7 +35,7 @@ public class Account {
     public void transfer(Account destinationAccount, double amount) {
         if (amount <= balance) {
             withdraw(amount);
-            destinationAccount.deposit(amount);
+            destinationAccount.deposit(amount, destinationAccount);
             System.out.println("Transferencia de R$" + amount + " realizada com sucesso.");
         } else {
             System.out.println("Saldo insuficiente para esta transferencia.");
